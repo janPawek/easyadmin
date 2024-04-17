@@ -216,6 +216,9 @@ go to Options - autocomplete and copy:
 
 go VSC: src/Controller/TodoController.php:
 
+Make a label for status: to see words and not Status 1 and status 2:
+Browser: https://symfony.com/bundles/EasyAdminBundle/current/fields.html#misc-options
+
 uncomment and modify following lines with :  AssociationField::new('...')->autocomplete();:
 
     public function configureFields(string $pageName): iterable
@@ -230,8 +233,7 @@ uncomment and modify following lines with :  AssociationField::new('...')->autoc
         ];
     }
 
-Make a label for status: to see words and not Status 1 and status 2:
-Browser: https://symfony.com/bundles/EasyAdminBundle/current/fields.html#misc-options
+
 
 
 
