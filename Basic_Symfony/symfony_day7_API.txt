@@ -1,0 +1,5 @@
+Symfony Day 7 - API
+
+cmd
+
+symfony new symfony_api
