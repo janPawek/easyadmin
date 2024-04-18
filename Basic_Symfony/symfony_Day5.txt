@@ -1,3 +1,9 @@
+ToDo when it is an existing database:
+symfony console doctrine:database:create
+push database:
+symfony console make:migration
+symfony console doctrine:migrations:migrate
+
 Symfony Day 5: also a LiveCoding-Code from Serri
 
 
