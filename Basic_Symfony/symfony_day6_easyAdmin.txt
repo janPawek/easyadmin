@@ -233,6 +233,12 @@ uncomment and modify following lines with :  AssociationField::new('...')->autoc
         ];
     }
 
+Browser: Dashboard go to folder Status: 
+and put in:
+available 
+and 
+not available
+
 
 add picture to CRUD 
 
