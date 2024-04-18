@@ -234,9 +234,31 @@ uncomment and modify following lines with :  AssociationField::new('...')->autoc
     }
 
 
+add picture to CRUD 
 
+for easyAdmin:
+ImageField::new('picture')->setBasePath('uploads/pictures/')->setUploadDir('public/uploads/pictures/')->setUploadedFileNamePattern('[slug]-[uuid].[extension]'),
 
+New code of TodoCrudController.php:
+public function configureFields(string $pageName): iterable
+    {
+        return [
+            TextField::new('name'),
+            TextEditorField::new('description'),
+            ImageField::new('picture')->setBasePath('uploads/pictures/')->setUploadDir('public/uploads/pictures/')->setUploadedFileNamePattern('[slug]-[uuid].[extension]'),
+            AssociationField::new('status')->setFormTypeOption('choice_label', function ($choice) {
+                return $choice->getName();
+            })
 
+        ];
+    }
+
+description:
+mageField::new('picture'), "picture" must be the column name in the database storing the image name.
+setBasePath('uploads/pictures/'), this is only for showing the image on the index page of the crud, it starts with the public folder so e.g. your pics are in "public/uploads/pictures" then the link is only "uploads/pictures/" (dont forget the trailing slash)
+setUploadDir('public/uploads/pictures/'), this is the target path for uploads, it must be the full path starting from the root so e.g. your pics are in "public/uploads/pictures" then the link is also "public/uploads/pictures"
+setUploadedFileNamePattern('[slug]-[uuid].[extension]'), to set a new name, otherwise its exactly the name of the file which you dont want, there are more options to this but i would go with the ones used here.
+[slug] is the cleaned and save name of the original file, [uuid] is a random string and [extension] is the original extension like .png, .jpg and so on
 
 
 
